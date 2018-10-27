@@ -1,13 +1,11 @@
 let connection = require("../config/connection.js");
 
 let orm = {
-    selectAll: function(table, key, val, callback){
-        let queryString = "SELECT * FROM ?? WHERE ?? = ?";
+    selectAll: function(table, callback){
+        let queryString = "SELECT * FROM ??";
         console.log(queryString);
-        connection.query(queryString, [table, key, val], function(err, result){
-            if(err) {
-                return res.status(500).end();
-            }
+        connection.query(queryString, [table], function(err, result){
+            if(err) throw err;
             callback(result);
         });
     },
@@ -16,9 +14,7 @@ let orm = {
         let queryString = "INSERT INTO ?? (??) VALUES (?)";
         console.log(queryString);
         connection.query(queryString, [table, col, val, callback], function(err, result){
-            if(err){
-                return res.status(500).end();
-            }
+            if(err) throw err;
             callback(result);
         });
     },
@@ -27,9 +23,7 @@ let orm = {
         let queryString = "UPDATE ?? SET ?? = ? WHERE ?? = ?";
         console.log(queryString);
         connection.query(queryString, [table, key1, val1, key2, val2], function(err, result){
-            if(err){
-                return res.status(500).end();
-            }
+            if(err) throw err;
             callback(result);
         });
     }

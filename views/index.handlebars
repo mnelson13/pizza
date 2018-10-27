@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="row">
+        <div class="col m12">
+            <img class="z-depth-4" src="/assets/img/pizza_banner.jpg" alt="pizza banner">
+            <h1 class="center-align blue-text lighten-1">Pizza Time!</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col m6">
+            <h5>Available Pizzas:</h5>
+            <ul>
+                {{#each pizzas}}
+                <li>
+                    <p>
+                        <a class="waves-effect waves-light btn-small blue lighten-1" data-pizzaid="{{this.id}}" id="eatPizza">Devour it!</a>
+                        {{this.pizza_name}}
+                    </p>
+                </li>
+                {{/each}}    
+            </ul>
+        </div>
+        <div class="col m6">
+            <h5>Pizzas Already Devoured:</h5>
+            <ul>
+                {{#each pizzasEaten}}
+                <li>
+                    <p>
+                        {{!-- <a class="waves-effect waves-light btn-small" data-pizzaid="{{this.id}}" id="eatPizza">Devour it!</a> --}}
+                        {{this.pizza_name}}
+                    </p>
+                </li>
+                {{/each}}    
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <form class="col s12" id="addPizza">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="pizza" id="newPizza" type="text" class="validate">
+                    <label for="newPizza">Add a pizza to eat!</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light blue lighten-1" type="submit" name="action">Add
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        </form>
+    </div>
+
+</div>
+
+
+

@@ -1,2 +1,2 @@
 INSERT INTO pizzas (pizza_name) 
-VALUES ('cheese'),('pepperoni'),('supreme');
+VALUES ('Cheese'),('Pepperoni'),('Supreme'),('Taco');

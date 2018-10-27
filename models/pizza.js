@@ -1,8 +1,8 @@
 let orm = require("../config/orm.js");
 
 let pizza = {
-    selectAll: function(key, val, callback){
-        orm.selectAll("pizzas", key, val, function(res){
+    selectAll: function(callback){
+        orm.selectAll("pizzas", function(res){
             callback(res);
         });
     },
