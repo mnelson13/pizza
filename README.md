@@ -1,6 +1,7 @@
 # Pizza Time!
 
 ### Link to Deployed Project:
+* https://pizza-time-49563.herokuapp.com/
 
 ### Instructions/Features:
 * Pizza Time is a resturant app that lets users add the names of pizzas they would like to eat.
